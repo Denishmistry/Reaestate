@@ -223,9 +223,8 @@ p {
   }
 
   p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.8;
+    font-size: 14px;
+
   }
 }
 
@@ -427,6 +426,9 @@ ol {
 .title-block h2 {
   font-size: 36px
 }
+.title-block h2.lg{
+  font-size: 50px;
+}
 .section-title{
   color: var(--black);
   font-weight: 600;
@@ -436,3 +438,14 @@ ol {
 }
 
 
+@media only screen and (max-width:991.98px) {
+  .title-block h2.lg{
+    font-size: 30px;
+  }
+  .projects-block {
+      width: 300px;
+      height: 450px;
+
+  }
+
+}

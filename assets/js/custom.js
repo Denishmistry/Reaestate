@@ -93,23 +93,40 @@ $(document).ready(function () {
 
   function staggerAnim(selector, staggerTime, y) {
     const selcetor = document.querySelectorAll(selector);
-    gsap.set(selector, {opacity: 0, y: y});
+    gsap.set(selector, {
+      opacity: 0,
+      y: y
+    });
 
-    let Start,End;
-    if(window.offsetWidth > 768){
+    let Start, End;
+    if (window.offsetWidth > 768) {
       Start = "top 80%";
-      End="bottom 20%";
+      End = "bottom 20%";
 
-    }else{
+    } else {
       Start = "top 80%";
-      End="bottom 0%";
+      End = "bottom 0%";
     }
 
     ScrollTrigger.batch(selcetor, {
-      onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: staggerTime}),
-      onLeave: batch => gsap.to(batch, {opacity: 0, y: y}),
-      onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: staggerTime}),
-      onLeaveBack: batch => gsap.to(batch, {opacity: 0, y: y}),
+      onEnter: batch => gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        stagger: staggerTime
+      }),
+      onLeave: batch => gsap.to(batch, {
+        opacity: 0,
+        y: y
+      }),
+      onEnterBack: batch => gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        stagger: staggerTime
+      }),
+      onLeaveBack: batch => gsap.to(batch, {
+        opacity: 0,
+        y: y
+      }),
 
       start: Start,
       end: End,
@@ -120,6 +137,24 @@ $(document).ready(function () {
   }
   staggerAnim(".about-img-grid > * , .about-content *", 0.2, 20);
   // ==============================
-  // Gsap Stagger Animation
+  // Gsap Horizontal scroll
   // ==============================
+  let pinWrap = document.querySelector(".pin-wrap");
+  let pinWrapWidth = pinWrap.offsetWidth;
+  let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+  // Pinning and horizontal scrolling
+  gsap.to(pinWrap, {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".projects",
+      pin: true,
+      markers: false,
+      // anticipatePin: 1,
+      start: "top top",
+      end: pinWrapWidth
+    },
+    x: -horizontalScrollLength,
+    ease: "none"
+  });
+
 });
