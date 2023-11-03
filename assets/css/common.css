@@ -436,11 +436,16 @@ ol {
   letter-spacing: -0.88px;
   margin-bottom: 30px;
 }
-
+.section-title.txt-white{
+  color: var(--white);
+}
 
 @media only screen and (max-width:991.98px) {
   .title-block h2.lg{
     font-size: 30px;
+  }
+  .title-block h2 {
+    font-size: 20px
   }
   .projects-block {
       width: 300px;
@@ -448,4 +453,40 @@ ol {
 
   }
 
+}
+/* =============== */
+/* Text Animation */
+/* ============== */
+
+
+.text-animation-main {
+  overflow: hidden;
+  padding: 0;
+  /* transform: rotate(3deg); */
+
+  transform-origin: center;
+  width: calc(100% - 8px);
+  margin: 0 auto 50px;
+}
+
+.text-animation {
+  white-space: nowrap;
+  overflow: visible;
+  padding: 0 50px;
+  display: flex;
+  width: 100%;
+  font-style: italic;
+}
+.text-animation h3 {
+  font-size: 70px;
+  line-height: 1.2;
+  margin: 0px;
+  padding: 10px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px #b3b3b3;
+  transition: all ease 0.5s;
+}
+.text-animation h3 span{
+  color: #b3b3b3;
 }

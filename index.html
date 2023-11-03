@@ -24,7 +24,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
+	<!-- fancybox -->
+	<link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
     <!-- Animation css -->
     <link rel="stylesheet" href="assets/css/animate.css" />
     <!-- Bs Css -->
@@ -37,167 +38,257 @@
 </head>
 
 <body>
+    <div class="main-wrap overflow-hidden">
 
-    <header class="custom-header custom-nav fade-in ">
-        <!-- Navbar Start -->
-        <div class="container-fluid">
-            <nav>
-                <a class="logo" href="index.html" title="">
-                    <img width="155" height="55" class="img-fluid" src="assets/images/logo.png" alt="Realstate" />
-                </a>
-                <span id="menu" class="menu-main">
-                    <div class="menu-outer">
-                        <ul class="navlist">
-                            <li><a href="" title="About Us">About us</a></li>
-                            <li><a href="" title="Projects">Projects</a></li>
-                            <li><a href="" title="Virtual Tour">Virtual tour</a></li>
-                            <li><a href="" title="Construction Update">Construction update</a></li>
-                            <li><a href="" title="News">News </a></li>
-                            <li><a href="" title="contact-us">Contact us </a></li>
+
+        <header class="custom-header custom-nav fade-in ">
+            <!-- Navbar Start -->
+            <div class="container-fluid">
+                <nav>
+                    <a class="logo" href="index.html" title="">
+                        <img width="155" height="55" class="img-fluid" src="assets/images/logo.png" alt="Realstate" />
+                    </a>
+                    <span id="menu" class="menu-main">
+                        <div class="menu-outer">
+                            <ul class="navlist">
+                                <li><a href="" title="About Us">About us</a></li>
+                                <li><a href="" title="Projects">Projects</a></li>
+                                <li><a href="" title="Virtual Tour">Virtual tour</a></li>
+                                <li><a href="" title="Construction Update">Construction update</a></li>
+                                <li><a href="" title="News">News </a></li>
+                                <li><a href="" title="contact-us">Contact us </a></li>
+                            </ul>
+                        </div>
+                    </span>
+                    <div class="d-flex align-items-center fade-in">
+                        <a class="whats-app" href="#!">
+                            <span class='bx bxl-whatsapp'></span>
+                        </a>
+                        <button class="toggle-menu d-lg-none d-block">
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <!-- Navbar End -->
+        </header>
+
+        <main>
+            <!-- Hero section Start -->
+            <section class="hero">
+
+                <div class="hero-main">
+                    <img class="bg-image" src="assets/images/home/home.png" alt="Home">
+                    <div class="hero-content">
+                        <h1 class="font-title split">Building Dreams <br />to live in.</h1>
+                        <p class="h5 fw-normal mt-2 mb-4">Affordable, High-Quality Construction Services in Dubai.</p>
+                        <button class="btn btn-primary">Inquire Now</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Hero section Start -->
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <div class="about-content">
+                                <h2 class="section-title mt-lg-5">
+                                    Dedication, experience and a
+                                    <br /> passion for perfection.
+                                </h2>
+
+
+                                <p class="txt-light-black pe-lg-4">At Realestate ltd our focus is on YOU and what YOU want
+                                    to achieve.
+                                    We pride ourselves on forging
+                                    strong, lasting relationships, which help us to continue to thrive and develop.</p>
+
+                                <p class="txt-light-black pe-lg-4"> Our desire to work closely with those who share the same
+                                    vision and values is why many of our
+                                    clients have a multiple project history. Exceeding client expectations has resulted in
+                                    continual
+                                    repeat business within the local area, which means we are building a foundation not only
+                                    for
+                                    our
+                                    business but also for our community. </p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-img-grid d-flex flex-row gap-3  justify-content-center mt-lg-0 mt-4 ">
+                                <div class="play">
+                                    <img width="80" id="play" height="80" src="assets/images/play.svg" alt="Play">
+                                    <img width="80" id="pause" height="80" src="assets/images/pause.svg" alt="Play">
+                                </div>
+                                <div class="position-relative about-video mt-5">
+                                    <video loop playsinline src="assets/images/360.mp4" width="250" height="425"
+                                        class="img-fluid" id="myVideo"></video>
+                                    <!-- <img class="mt-5" src="assets/images/home/about3.png"
+                                        alt="About" /> -->
+
+                                </div>
+
+                                <div class="d-flex flex-column  gap-3">
+                                    <img src="assets/images/home/about1.png" width="190" height="200" alt="About" />
+                                    <img src="assets/images/home/about2.png" width="190" height="200" alt="About" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Project section -->
+            <section class="projects" id="projects">
+                <div class="pin-wrap">
+                    <div class="title-block">
+                        <h2 class="font-title mb-4 lg">Ongoing Projects</h2>
+                        <p>Discover your dream home with Realestate ltd. Our user-friendly platform offers
+                            a curated selection of properties to suit every lifestyle and budget. Whether you're a
+                            first-time buyer, an investor, or selling your property, we're here to assist. Explore detailed
+                            listings, captivating visuals, and virtual tours, providing an immersive experience. Our
+                            experienced agents ensure a seamless journey, offering expert market insights and personalized
+                            guidance. From urban apartments to countryside estates, we have your perfect match. Trust us to
+                            make your real estate dreams a reality. Start your journey today – find, buy, sell with
+                            confidence at Realestate ltd.</p>
+                    </div>
+
+                    <a class="projects-block">
+                        <img width="370" height="470" src="assets/images/projects/projects1.jpg" alt="Projects">
+                        <div class="description">
+                            <h3 class="h4 font-title">Real Dimitrios</h3>
+                            <p>Based on a unique architectural design. This was to maximise interior space by being built
+                                right to the boundary edges.</p>
+                        </div>
+                    </a>
+
+                    <a href="#!" class="projects-block">
+                        <img width="370" height="470" src="assets/images/projects/projects2.jpg" alt="Projects">
+                        <div class="description">
+                            <h3 class="h4 font-title">Summit Plaza	</h3>
+                            <p>Based on a unique architectural design. This was to maximise interior space by being built
+                                right to the boundary edges.</p>
+                        </div>
+                    </a>
+
+                    <a href="#!" class="projects-block">
+                        <img width="370" height="470" src="assets/images/projects/projects3.jpg" alt="Projects">
+                        <div class="description">
+                            <h3 class="h4 font-title">Oasis Tower	</h3>
+                            <p>Based on a unique architectural design. This was to maximise interior space by being built
+                                right to the boundary edges.</p>
+                        </div>
+                    </a>
+
+                    <a href="#!" class="projects-block">
+                        <img width="370" height="470" src="assets/images/projects/projects4.jpg" alt="Projects">
+                        <div class="description">
+                            <h3 class="h4 font-title">Zenith Heights	</h3>
+                            <p>Based on a unique architectural design. This was to maximise interior space by being built
+                                right to the boundary edges.</p>
+                        </div>
+                    </a>
+                    <a href="" class="view-all projects-block">
+                        <p class="h2 font-title" >
+                            View All Projects
+                        </p>
+                    </a>
+                </div>
+            </section>
+            <!-- Slider gallery product -->
+            <section class="slider-gallery">
+                <div class="text-animation-main">
+                    <div class="text-animation text1">
+                      <h3>Dedicated to delivering <span>Top Quality</span> products.</h3>
+                      <h3>Dedicated to delivering <span>Top Quality</span> products.</h3>
+                      <h3>Dedicated to delivering <span>Top Quality</span> products.</h3>
+                      <h3>Dedicated to delivering <span>Top Quality</span> products.</h3>
+                    </div>
+
+                  </div>
+                <!-- <div class="container">
+                    <div class="title-block mb-lg-5 mb-4">
+                        <h2>
+                            We are determined to provide the
+                            <br/><strong> Best Product</strong> to our clients.
+                        </h2>
+                    </div>
+                </div> -->
+                <div class="marquee-slider-main">
+                    <div class="marquee-scroll left">
+                        <ul class="marquee-inner left-to-right mb-lg-4 mb-2">
+                            <li>
+                                <a href="assets/images/product/product1.jpg" >
+                                <img src="assets/images/product/product1.jpg" alt="image slider" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product2.jpg" >
+                                <img src="assets/images/product/product2.jpg" alt="image slider" />
+                            </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product3.jpg" >
+                                <img src="assets/images/product/product3.jpg" alt="image slider" />
+                            </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product4.jpg" >
+                                <img src="assets/images/product/product4.jpg" alt="image slider" />
+                            </a>
+                            </li>
                         </ul>
                     </div>
-                </span>
-                <div class="d-flex align-items-center fade-in">
-                    <a class="whats-app" href="#!">
-                        <span class='bx bxl-whatsapp'></span>
-                    </a>
-                    <button class="toggle-menu d-lg-none d-block">
-                        <span></span>
-                    </button>
                 </div>
-            </nav>
-        </div>
-        <!-- Navbar End -->
-    </header>
-
-    <main>
-        <!-- Hero section Start -->
-        <section class="hero">
-
-            <div class="hero-main">
-                <img class="bg-image" src="assets/images/home/home.png" alt="Home">
-                <div class="hero-content">
-                    <h1 class="font-title split">Building Dreams <br />to live in.</h1>
-                    <p class="h5 fw-normal mt-2 mb-4">Affordable, High-Quality Construction Services in Dubai.</p>
-                    <button class="btn btn-primary">Inquire Now</button>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Hero section Start -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 ">
-                        <div class="about-content">
-                            <h2 class="section-title mt-lg-5">
-                                Dedication, experience and a
-                                <br /> passion for perfection.
-                            </h2>
-                            <p class="txt-light-black pe-lg-4">At Realestate ltd our focus is on YOU and what YOU want
-                                to achieve.
-                                We pride ourselves on forging
-                                strong, lasting relationships, which help us to continue to thrive and develop.</p>
-
-                            <p class="txt-light-black pe-lg-4"> Our desire to work closely with those who share the same
-                                vision and values is why many of our
-                                clients have a multiple project history. Exceeding client expectations has resulted in
-                                continual
-                                repeat business within the local area, which means we are building a foundation not only
-                                for
-                                our
-                                business but also for our community. </p>
-                        </div>
-
+                <div class="marquee-slider-main">
+                    <div class="marquee-scroll right">
+                        <ul class="marquee-inner right-to-left">
+                            <li>
+                                <a href="assets/images/product/product5.jpg" >
+                                <img src="assets/images/product/product5.jpg" alt="image slider" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product6.jpg" >
+                                <img src="assets/images/product/product6.jpg" alt="image slider" />
+                            </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product7.jpg" >
+                                <img src="assets/images/product/product7.jpg" alt="image slider" />
+                            </a>
+                            </li>
+                            <li>
+                                <a href="assets/images/product/product8.jpg" >
+                                    <img src="assets/images/product/product8.jpg" alt="image slider" />
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="about-img-grid d-flex flex-row gap-3  justify-content-center mt-lg-0 mt-4 ">
-                            <div class="play">
-                                <img width="80" id="play" height="80" src="assets/images/play.svg" alt="Play">
-                                <img width="80" id="pause" height="80" src="assets/images/pause.svg" alt="Play">
-                            </div>
-                            <div class="position-relative about-video mt-5">
-                                <video loop playsinline src="assets/images/360.mp4" width="250" height="425"
-                                    class="img-fluid" id="myVideo"></video>
-                                <!-- <img class="mt-5" src="assets/images/home/about3.png"
-                                    alt="About" /> -->
+                </div>
+            </section>
+            <!-- 360view -->
+            <section class="video-view">
+                <div class="container">
+                    <h2 class="txt-white  section-title">
+                        Get a complete view of the Projects from the <br> comfort of your screen in <span class="font-title">360 degrees</span>
+                    </h2>
+                    <div class="video-view-wrapper overflow-hidden">
+                        <video  class="img-fluid"  autoplay loop muted playsinline width="1170" height="550">
+                            <source src="assets/images/360.mp4" type="video/mp4">
+                         </video>
 
-                            </div>
-
-                            <div class="d-flex flex-column  gap-3">
-                                <img src="assets/images/home/about1.png" width="190" height="200" alt="About" />
-                                <img src="assets/images/home/about2.png" width="190" height="200" alt="About" />
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-            </div>
 
-        </section>
-
-        <!-- Project section -->
-        <section class="projects" id="projects">
-            <div class="pin-wrap">
-                <div class="title-block">
-                    <h2 class="font-title mb-4 lg">Ongoing Projects</h2>
-                    <p>Discover your dream home with Realestate ltd. Our user-friendly platform offers
-                        a curated selection of properties to suit every lifestyle and budget. Whether you're a
-                        first-time buyer, an investor, or selling your property, we're here to assist. Explore detailed
-                        listings, captivating visuals, and virtual tours, providing an immersive experience. Our
-                        experienced agents ensure a seamless journey, offering expert market insights and personalized
-                        guidance. From urban apartments to countryside estates, we have your perfect match. Trust us to
-                        make your real estate dreams a reality. Start your journey today – find, buy, sell with
-                        confidence at Realestate ltd.</p>
-                </div>
-
-                <a class="projects-block">
-                    <img width="370" height="470" src="assets/images/projects/projects1.jpg" alt="Projects">
-                    <div class="description">
-                        <h3 class="h4 font-title">Real Dimitrios</h3>
-                        <p>Based on a unique architectural design. This was to maximise interior space by being built
-                            right to the boundary edges.</p>
-                    </div>
-                </a>
-
-                <a href="#!" class="projects-block">
-                    <img width="370" height="470" src="assets/images/projects/projects2.jpg" alt="Projects">
-                    <div class="description">
-                        <h3 class="h4 font-title">Summit Plaza	</h3>
-                        <p>Based on a unique architectural design. This was to maximise interior space by being built
-                            right to the boundary edges.</p>
-                    </div>
-                </a>
-
-                <a href="#!" class="projects-block">
-                    <img width="370" height="470" src="assets/images/projects/projects3.jpg" alt="Projects">
-                    <div class="description">
-                        <h3 class="h4 font-title">Oasis Tower	</h3>
-                        <p>Based on a unique architectural design. This was to maximise interior space by being built
-                            right to the boundary edges.</p>
-                    </div>
-                </a>
-
-                <a href="#!" class="projects-block">
-                    <img width="370" height="470" src="assets/images/projects/projects4.jpg" alt="Projects">
-                    <div class="description">
-                        <h3 class="h4 font-title">Zenith Heights	</h3>
-                        <p>Based on a unique architectural design. This was to maximise interior space by being built
-                            right to the boundary edges.</p>
-                    </div>
-                </a>
-                <a href="" class="view-all projects-block">
-                    <p class="h2 font-title" >
-                        View All Projects
-                    </p>
-                </a>
-            </div>
-        </section>
-
-
-    </main>
-
+            </section>
+        </main>
+    </div>
 
 
     <!-- modal -->
@@ -205,7 +296,7 @@
     <!-- modal -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
+	<script src="assets/js/jquery.fancybox.min.js"></script>
 
     <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
