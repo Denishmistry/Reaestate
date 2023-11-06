@@ -186,14 +186,14 @@ $(document).ready(function () {
   // Gsap Stagger Animation
   // ==============================
   function staggerAnim(selector, staggerTime, y) {
-    const selcetor = document.querySelectorAll(selector);
-    gsap.set(selector, {
+    const selectorelm = document.querySelectorAll(selector);
+    gsap.set(selectorelm, {
       opacity: 0,
       y: y
     });
 
     let Start, End;
-    if (window.offsetWidth > 768) {
+    if (window.innerWidth > 768) {
       Start = "top 80%";
       End = "bottom 20%";
 
@@ -202,16 +202,22 @@ $(document).ready(function () {
       End = "bottom 0%";
     }
 
-    ScrollTrigger.batch(selcetor, {
+    ScrollTrigger.batch(selectorelm, {
       scrub: 2,
+      start: Start,
+      end: End,
+      markers: false,
+
       onEnter: batch => gsap.to(batch, {
         opacity: 1,
         y: 0,
-        stagger: staggerTime
+        stagger: staggerTime,
+
       }),
       onLeave: batch => gsap.to(batch, {
         opacity: 0,
-        y: y
+        y: y,
+
       }),
       onEnterBack: batch => gsap.to(batch, {
         opacity: 1,
@@ -222,38 +228,54 @@ $(document).ready(function () {
         opacity: 0,
         y: y
       }),
-      start: Start,
-      end: End,
-      markers: false,
+
     });
 
-
+    ScrollTrigger.addEventListener("refreshInit", () => gsap.set(selectorelm, {
+      y: y,   opacity: 0
+    }));
   }
-  staggerAnim(".about-img-grid > * , .about-content *", 0.2, 40);
+  setTimeout(() => {
+    staggerAnim(".about-img-grid > * ", 0.1, 100);
+
+
+  }, 300);
 
 
   // ==============================
   // Gsap Horizontal scroll
   // ==============================
-  function horizontalScroll(selector){
-    let pinWrap = document.querySelector(selector);
-    let pinWrapWidth = pinWrap.offsetWidth;
-    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-    // Pinning and horizontal scrolling
-    gsap.to(pinWrap, {
-      scrollTrigger: {
-        scrub: 2,
-        trigger: ".projects",
-        pin: true,
 
-        markers: false,
-        // anticipatePin: 1,
-        start: "top top",
-        end: pinWrapWidth
-      },
-      x: -horizontalScrollLength,
-      ease: "none"
+
+
+  function horizontalScroll(selector){
+
+
+
+    let horizontalSections = document.querySelectorAll(".projects");
+
+    horizontalSections.forEach((horizontalSection) => {
+      let pinWrap = horizontalSection.querySelector(selector);
+      let pinWrapWidth = pinWrap.offsetWidth;
+      let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+
+
+      gsap.to(pinWrap, {
+        scrollTrigger: {
+
+          scrub: true,
+          trigger: horizontalSection,
+          pin: true,
+          pinSpacing:true,
+          start: "top top",
+          end: () => `+=${pinWrapWidth}`,
+          invalidateOnRefresh: true
+        },
+        x: -horizontalScrollLength,
+        ease: "none"
+      });
     });
+
   }
   horizontalScroll(".pin-wrap")
 // ======================
@@ -263,28 +285,30 @@ $(document).ready(function () {
     const select2 = document.querySelectorAll(selector);
     gsap.utils.toArray(select2).forEach((slideup) => {
       gsap.set(slideup, {
-        scale: 1,
+        scale: 0.9,
         x: "0%",
         y: "0%",
+        borderRadius: "0%",
         opacity: 0.8
       });
       gsap.to(slideup, {
         scrollTrigger: {
           trigger: slideup,
-          scrub: 4,
+          scrub: 3,
           markers: false,
-          start: "top 80%",
-          end: "bottom 30%",
+          start: "top 100%",
+          end: "top 50%",
         },
-        scale: 1.5,
+        scale: 1,
         x: "0%",
         y: "0",
+        borderRadius:0,
         opacity: 1
       });
 
     });
   }
-  scaleUp(".video-view-wrapper  video");
+  scaleUp(".video-view");
 // ======================
 // Gsap SlideUp animation
 // ======================
@@ -298,12 +322,12 @@ $(document).ready(function () {
       gsap.to(slidedown, {
         scrollTrigger: {
           trigger: slidedown,
-          scrub: scrub,
+          scrub: 3,
           markers: false,
           ease: Power2.easeOut,
-          start: "top 80%",
+          start: "top 100%",
           duration: 1,
-          end: "bottom 30%",
+          end: "bottom 75%",
         },
 
         y: "0",
@@ -312,8 +336,9 @@ $(document).ready(function () {
 
     });
   }
-  SlideUp(".video-view div > h2,.video-view div > div", 100, 3, 1);
+
   SlideUp(".slider-gallery > div", 20, 3, 0.8);
+  SlideUp(".home-about  * ", 30, 3, 0.8);
 // ========================
 // Text scroll Animation
 // =======================

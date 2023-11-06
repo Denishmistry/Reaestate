@@ -81,7 +81,7 @@ button:focus {
 body {
   font-family: var(--font-theme);
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   font-size: 16px;
   line-height: 22px;
   color: var(--text-black);
@@ -269,6 +269,9 @@ p {
 
 .lh-16 {
   line-height: 1.6;
+}
+.lh-18 {
+  line-height: 1.8;
 }
 
 
@@ -489,4 +492,47 @@ ol {
 }
 .text-animation h3 span{
   color: #b3b3b3;
+}
+
+
+.read-more{
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+}
+.read-more:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  left: -14px;
+  right: 0;
+  bottom: -8px;
+  background: #ececec;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all ease .2s;
+}
+.read-more:hover{
+  color: var(--black);
+  letter-spacing: 1px;
+}
+.read-more:hover:before{
+  width: calc(100% + 30px);
+}
+
+
+
+.bg-city {
+  animation: city 500s linear 0s infinite;
+  background-image: url("../images/city.svg");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: bottom;
+  padding-bottom: 280px;
 }

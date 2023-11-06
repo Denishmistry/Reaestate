@@ -304,19 +304,33 @@
         padding: 10px;
     }
 }
-
 /* =============================
           Home About section
 ================================*/
-
-.about {
-    animation: city 500s linear 0s infinite;
-    background-image: url("../images/city.svg");
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-position: bottom;
-    padding-bottom: 280px;
+.home-about{
+    position: relative;
 }
+.content{
+    margin: 100px 0 80px;
+
+}
+.circle{
+    width: 600px;
+    height: 600px;
+    display: block;
+    position: absolute;
+    background: #f9f9f9;
+    border-radius: 50%;
+    left: 7%;
+    right: 0;
+    top: 10%;
+    margin: 0 auto;
+    z-index: -1;
+}
+/* =============================
+           About section
+================================*/
+
 
 .play img:hover {
     transform: scale(1.1);
@@ -383,7 +397,7 @@
 ================================*/
 
 .projects {
-    background: #03050B;
+    background: var(--black);
     overflow: hidden;
     display: flex;
     left: 0;
