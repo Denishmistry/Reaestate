@@ -236,7 +236,8 @@ $(document).ready(function () {
     }));
   }
   setTimeout(() => {
-    staggerAnim(".about-img-grid > * ", 0.1, 100);
+    // staggerAnim(".about-img-grid > * ", 0.1, 100);
+      staggerAnim(".blog .row > * ", 0.1, 100);
 
 
   }, 300);
@@ -281,14 +282,14 @@ $(document).ready(function () {
 // ======================
 // Gsap scaleUp animation
 // ======================
-  function scaleUp(selector) {
+  function scaleUp(selector,InitialScalepos,EndScalepos,StartRadius,EndRadius) {
     const select2 = document.querySelectorAll(selector);
     gsap.utils.toArray(select2).forEach((slideup) => {
       gsap.set(slideup, {
-        scale: 0.9,
+        scale: InitialScalepos,
         x: "0%",
         y: "0%",
-        borderRadius: "0%",
+        borderRadius:StartRadius,
         opacity: 0.8
       });
       gsap.to(slideup, {
@@ -299,16 +300,17 @@ $(document).ready(function () {
           start: "top 100%",
           end: "top 50%",
         },
-        scale: 1,
+        scale: EndScalepos,
         x: "0%",
         y: "0",
-        borderRadius:0,
+        borderRadius:EndRadius,
         opacity: 1
       });
 
     });
   }
-  scaleUp(".video-view");
+  scaleUp(".circle",0.2,1,"100%","100%");
+  scaleUp(".video-view",0.9,1,"100%","0");
 // ======================
 // Gsap SlideUp animation
 // ======================
@@ -338,7 +340,8 @@ $(document).ready(function () {
   }
 
   SlideUp(".slider-gallery > div", 20, 3, 0.8);
-  SlideUp(".home-about  * ", 30, 3, 0.8);
+  SlideUp(".home-about>div * ", 30, 3, 0.8);
+
 // ========================
 // Text scroll Animation
 // =======================

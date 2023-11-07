@@ -445,7 +445,7 @@ ol {
 
 @media only screen and (max-width:991.98px) {
   .title-block h2.lg{
-    font-size: 30px;
+    font-size: 24px;
   }
   .title-block h2 {
     font-size: 20px
@@ -518,6 +518,14 @@ ol {
   border-radius: 50px;
   transition: all ease .2s;
 }
+.read-more.sm{
+  font-size: 14px;
+}
+.read-more.sm:before{
+  width: 35px;
+  height: 35px;
+  bottom: -6px;
+}
 .read-more:hover{
   color: var(--black);
   letter-spacing: 1px;
@@ -535,4 +543,16 @@ ol {
   background-size: contain;
   background-position: bottom;
   padding-bottom: 280px;
+}
+@media only screen and (max-width:768px) {
+  .read-more{
+    margin-left: 15px;
+  }
+  .bg-city{
+    padding-bottom: 80px;
+    background-size: 250%;
+  }
+  .text-animation h3 {
+    font-size: 40px;
+  }
 }
