@@ -297,7 +297,7 @@
 
 @media only screen and (max-width:768px) {
     .hero-main {
-        height: calc(100vh - 225px);
+        height: calc(100vh - 100px);
         width: calc(100% - 5vw);
         border-radius: 20px;
         border-radius: 20px;
