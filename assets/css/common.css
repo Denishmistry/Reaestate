@@ -333,7 +333,7 @@ ol {
 }
 
 .alt-bg {
-  background-color: var(--light-gray);
+  background-color: var(--theme-gray);
 }
 
 
@@ -450,12 +450,6 @@ ol {
   .title-block h2 {
     font-size: 20px
   }
-  .projects-block {
-      width: 300px;
-      height: 450px;
-
-  }
-
 }
 /* =============== */
 /* Text Animation */
@@ -513,10 +507,13 @@ ol {
   left: -14px;
   right: 0;
   bottom: -8px;
-  background: #ececec;
+  background: var(--theme-gray);
   z-index: -1;
   border-radius: 50px;
   transition: all ease .2s;
+}
+.read-more-alt:before{
+  background: var(--white);
 }
 .read-more.sm{
   font-size: 14px;
@@ -555,4 +552,78 @@ ol {
   .text-animation h3 {
     font-size: 40px;
   }
+}
+
+
+/* ================== */
+/* Inner page Header  */
+/* ================== */
+.inner-sec-hero {
+  padding: 0;
+  position: relative;
+  z-index: -1;
+}
+.inner-sec-hero .hero-main {
+  width: 100%;
+  border-radius: 0;
+  background: var(--black);
+  height: 50vh;
+}
+.hero-content h1{
+  font-size: 65px;
+  margin-top: 50px;
+}
+
+/*========================
+        Cms Page
+======================== */
+
+.cms>* {
+  margin-bottom: 20px
+}
+
+@media only screen and (max-width: 991.98px) {
+  .cms>* {
+      margin-bottom:15px
+  }
+}
+
+.cms {
+  max-width: 970px;
+  margin: 0 auto
+}
+
+.cms img {
+  width: 100%;
+  height: auto
+}
+
+.cms ul {
+  list-style: none;
+  padding-left: 25px;
+}
+
+.cms ul li {
+  padding-left: 10px;
+  position: relative;
+  font-size: 20px;
+  line-height: 1.8
+}
+
+@media only screen and (max-width: 991.98px) {
+  .cms ul li {
+      font-size:16px
+  }
+}
+
+.cms ul li:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/bullet.svg");
+  position: absolute;
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  background-repeat: no-repeat
 }

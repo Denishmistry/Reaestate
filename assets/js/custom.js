@@ -207,7 +207,6 @@ $(document).ready(function () {
       start: Start,
       end: End,
       markers: false,
-
       onEnter: batch => gsap.to(batch, {
         opacity: 1,
         y: 0,
@@ -238,6 +237,7 @@ $(document).ready(function () {
   setTimeout(() => {
     // staggerAnim(".about-img-grid > * ", 0.1, 100);
       staggerAnim(".blog .row > * ", 0.1, 100);
+      staggerAnim(".our-mission .title-block > * ", 0.1, 100);
 
 
   }, 300);
@@ -246,9 +246,6 @@ $(document).ready(function () {
   // ==============================
   // Gsap Horizontal scroll
   // ==============================
-
-
-
   function horizontalScroll(selector){
 
 
@@ -341,6 +338,8 @@ $(document).ready(function () {
 
   SlideUp(".slider-gallery > div", 20, 3, 0.8);
   SlideUp(".home-about>div * ", 30, 3, 0.8);
+  SlideUp(".about-content > * , .facts > * ,.about-img-grid > *,.about-small-desc > *",30, 3,0.8);
+
 
 // ========================
 // Text scroll Animation
@@ -368,5 +367,42 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
   });
 }
 TextScrollFunction(".text1", "-100%", "-200%");
+
+
+//
+$(".numberanim").each(function(index, element) {
+
+  var count = $(this),
+      zero = {val:0},
+      num = count.data("number"),
+      split = (num + "").split("."),
+      decimals = split.length > 1 ? split[1].length : 0;
+
+    console.log(num)
+    console.log(typeof num)
+
+    if (typeof num == 'string') {
+      num = parseInt(num.split(',').join(''))
+    }
+
+    console.log(num)
+    console.log(typeof num)
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    gsap.to(zero, {
+      val: num,
+      duration: 2,
+      scrollTrigger: element,
+
+      onUpdate: function() {
+        count.text(numberWithCommas(zero.val.toFixed(decimals)));
+      }
+    });
+});
+
+
 
 });
