@@ -899,3 +899,43 @@ footer .btn.btn-submit{
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (max-width:1024px){
+    .progressbar-wrap .progress-title{
+
+            width: 150px;
+
+    }
+    .sec-construction-range .container{
+        max-width: 100%;
+    }
+    .progressbar-wrap .progress-title span{
+        font-size: 14px;
+    }
+    .progressbar-outer {
+        width: calc(100% - 150px);
+    }
+    .construction-info .construction-items{
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .construction-info{
+        flex-direction: column;
+    }
+    .construction-info .construction-items{
+        width: 100%;
+    }
+    .progressbar-wrap .progress-title span{
+        font-size: 12px;
+    }
+    .progressbar-wrap .progress-title{
+
+        width: 135px;
+
+}
+    .progressbar-outer {
+        width: calc(100% - 135px);
+    }
+}
